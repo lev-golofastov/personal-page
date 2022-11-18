@@ -20,7 +20,7 @@ class Post(db.Model):
 
 
 def db_init(app):
-    posts = [{"name": "test", "text": "popa"}]
+    posts = [{"name": "testName", "text": "tesText"}]
 
     # Check if db file already exists. If so, backup it
     db_file = Path(SQLITE_DATABASE_NAME)
@@ -33,8 +33,7 @@ def db_init(app):
         db.drop_all()
         db.create_all()
 
-        # Create TestOne questions
-        print("Create TestOne questions")
+        # Create Data Base
         for q in posts:
             print(q)
             tq = Post(name=q['name'], text=q['text'])
